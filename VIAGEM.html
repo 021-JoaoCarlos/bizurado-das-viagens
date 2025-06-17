@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizurado das Viagens - Sua Consultoria de Viagens Inteligente</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --border-color: #dee2e6;
+            --shadow-color: rgba(0,0,0,0.1);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+        main {
+            padding: 40px 0;
+        }
+        #form-section {
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+        #form-section h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        #form-section p {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        fieldset {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        legend {
+            font-weight: 600;
+            color: var(--primary-color);
+            padding: 0 10px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box; /* Important for consistent sizing */
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #e9ecef;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>✈️ Bizurado das Viagens</h1>
+            <p>Sua consultoria de viagens com IA que encontra o melhor custo-benefício em dinheiro e milhas.</p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="form-section">
+                <h2>Planeje sua Próxima Viagem</h2>
+                <p>Preencha o formulário abaixo e receba uma análise completa e comparativa das melhores opções de voos e hotéis para você.</p>
+                
+                <form action="https://formspree.io/f/SUA_ID_AQUI" method="POST">
+                
+                    <fieldset>
+                        <legend>Informações da Viagem</legend>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="origem">Origem</label>
+                                <input type="text" id="origem" name="Origem" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="destino">Destino</label>
+                                <input type="text" id="destino" name="Destino" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="data-ida">Data de Ida</label>
+                                <input type="date" id="data-ida" name="Data de Ida" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="data-volta">Data de Volta</label>
+                                <input type="date" id="data-volta" name="Data de Volta">
+                            </div>
+                            <div class="form-group">
+                                <label for="flexibilidade">Flexibilidade (+/- dias)</label>
+                                <input type="number" id="flexibilidade" name="Flexibilidade" value="3" min="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="passageiros">Nº de Passageiros</label>
+                                <input type="number" id="passageiros" name="Passageiros" value="1" min="1" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Preferências de Hospedagem</legend>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="estrelas">Categoria do Hotel (Estrelas)</label>
+                                <select id="estrelas" name="Categoria do Hotel">
+                                    <option value="Qualquer">Qualquer / Melhor Custo-Benefício</option>
+                                    <option value="3 Estrelas">3 Estrelas</option>
+                                    <option value="4 Estrelas">4 Estrelas</option>
+                                    <option value="5 Estrelas">5 Estrelas</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="cafe-manha">Café da Manhã Incluso?</label>
+                                <select id="cafe-manha" name="Café da Manhã">
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">Não</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Programas de Fidelidade (Opcional)</legend>
+                        <div class="form-group">
+                            <label for="programas">Quais programas você usa? (Ex: Smiles, LATAM Pass, Livelo)</label>
+                            <input type="text" id="programas" name="Programas de Fidelidade">
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Contato</legend>
+                         <div class="form-group">
+                            <label for="email">Seu E-mail para receber a análise</label>
+                            <input type="email" id="email" name="Email do Cliente" required>
+                        </div>
+                    </fieldset>
+                    
+                    <button type="submit" class="cta-button">Solicitar Análise Bizurada!</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bizurado das Viagens. Potencializado por Inteligência Artificial.</p>
+        </div>
+    </footer>
+</body>
+</html>
